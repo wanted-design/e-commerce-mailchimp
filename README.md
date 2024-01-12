@@ -5,8 +5,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:INFINITY-IT/e-commerce-mailchimp.git",
-            "or url": "https://username:token@github.com/infinity-it/e-commerce-mailchimp.git"
+            "url": "git@github.com:wanted-design/e-commerce-mailchimp.git",
+            "or url": "https://username:token@github.com:wanted-design/e-commerce-mailchimp.git"
         }
     ]
 }
@@ -15,7 +15,7 @@
 ### 2. Installation
 
 ```bash
-composer require "infinity-it/e-commerce-mailchimp"
+composer require "wanted-design/e-commerce-mailchimp"
 ```
 
 ### 3. To publish the config file to `config/newsletter.php` run:
