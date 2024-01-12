@@ -1,0 +1,39 @@
+{
+    "name": "infinity-it/e-commerce-mailchimp",
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\EMailchimp\\": "src/"
+        }
+    },
+    "license": "proprietary",
+    "homepage": "https://github.com/infinity-it/e-commerce-mailchimp",
+    "authors": [
+        {
+            "name": "mohamedhk2",
+            "email": "mohamedhk2@yahoo.fr"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "illuminate/support": "*",
+        "mailchimp/marketing": "^3.0",
+        "spatie/laravel-newsletter": "^4.11"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "description": "E-commerce MailChimp"
+}
