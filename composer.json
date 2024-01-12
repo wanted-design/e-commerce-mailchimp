@@ -1,16 +1,16 @@
 {
-    "name": "infinity-it/e-commerce-mailchimp",
+    "name": "wanted-design/e-commerce-mailchimp",
     "autoload": {
         "psr-4": {
             "ECommerce\\EMailchimp\\": "src/"
         }
     },
     "license": "proprietary",
-    "homepage": "https://github.com/infinity-it/e-commerce-mailchimp",
+    "homepage": "https://github.com/wanted-design/e-commerce-mailchimp",
     "authors": [
         {
-            "name": "mohamedhk2",
-            "email": "mohamedhk2@yahoo.fr"
+            "name": "Wanted Design",
+            "email": "contact@wantedesign.com"
         }
     ],
     "require": {
