@@ -559,22 +559,27 @@ trait EMailChimpTrait
      *
      * @return \Illuminate\Support\Collection|MailChimpMember[]
      */
-    public
-    static function getMembers(stdClass $list, ?string $status = null)
-    {
-        /**
-         * @var MailChimpList|stdClass $list
-         */
-        $members = self::getMailChimp()->get("lists/{$list->id}/members", array_merge(
-                [
-                    'count' => 1000,
-                ],
-                self::validateStatus($status) ? compact('status') : []
-            )
-        );
-        $members = is_array($members) && isset($members['members']) ? $members['members'] : [];
-        return collect($members)->map(fn($item) => self::arrayToObject($item));
-    }
+	public static function getMembers(stdClass $list, ?string $status = null)
+	{
+		$members = [];
+		$offset = 0;
+		$limit = 100;
+
+		do {
+			$response = self::getMailChimp()->get("lists/{$list->id}/members", [
+				'count' => $limit,
+				'offset' => $offset,
+				'status' => self::validateStatus($status) ? $status : null,
+			]);
+
+			$batchMembers = is_array($response['members'] ?? null) ? $response['members'] : [];
+			$members = array_merge($members, $batchMembers);
+
+			$offset += $limit;
+		} while (!empty($batchMembers));
+
+		return collect($members)->map(fn($item) => self::arrayToObject($item));
+	}
 
     /**
      * @return ApiClient
